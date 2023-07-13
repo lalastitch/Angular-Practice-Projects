@@ -1,0 +1,8 @@
+<form #form="ngForm">
+    <input id="customtip" name="customtip" placeholder="Tip Amount" [(ngModel)]="billprev.tipAmount">
+    <button (click)="calculateTip()">Tip</button>
+</form>
+
+<p>Tip: ${{ billprev.tipAmount }}</p>
+<p>Subtotal: ${{ billprev.bill }}</p>
+<p>Total: ${{ billprev.tipTotal }}</p>
