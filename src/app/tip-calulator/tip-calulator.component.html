@@ -1,10 +1,21 @@
-<form #form="ngForm">
-  <input id="bill" name="bill" placeholder="Your Bill Amount" [(ngModel)]="billprev.bill">
-  <button (click)="calculateTip(20)">20%</button>
-  <button (click)="calculateTip(15)">15%</button>
-  <button (click)="calculateTip(10)">10%</button>
-  <button (click)="calculateCustomTip()">Custom</button>
-</form>
+<div class="container">
+    <form #form="ngForm" >
+        <div class="form-group">
+            <label for="bill">Enter your bill amount below</label>
+            <input class="form-control smaller" id="bill" name="bill" placeholder="Your Bill Amount" [(ngModel)]="billprev.bill">
+        </div>
+        <div class="form-group buttonsgrouping mt-3">
+            <div class="d-flex">
+                <button style="background-color:  #74adaa; color: #FFFFFF;" class="btn btn-lg  flex-fill custom-button-spacing" (click)="calculateTip(20)">20%</button>
+                <button style="background-color:  #74adaa; color: #FFFFFF;" class="btn btn-lg flex-fill " (click)="calculateTip(15)">15%</button>
+            </div>
+            <div class=" d-flex mt-3">
+                <button style="background-color:  #74adaa; color: #FFFFFF;" class="btn btn-lg flex-fill custom-button-spacing " (click)="calculateTip(10)">10%</button>
+                <button style="background-color:  #74adaa; color: #FFFFFF;" class="btn btn-lg flex-fill " (click)="customTip()" routerLinkActive="router-link-active">Custom</button>
+            </div>
+        </div>
+    </form>
+    <p class="mt-4" >Tip: ${{ billprev.tipAmount }}</p>
+    <p>Total: ${{ billprev.tipTotal }}</p>
+</div>
 
-<p>Tip: ${{ billprev.tipAmount }}</p>
-<p>Total: ${{ billprev.tipTotal }}</p>

@@ -1,23 +1,26 @@
 import { Component } from '@angular/core';
 import {TipCalc} from '../data/tip-calc-form';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-tip-calulator',
-  templateUrl: './tip-calulator.component.html',
-  styleUrls: ['./tip-calulator.component.css']
+  selector: 'app-custom-tip',
+  templateUrl: './custom-tip.component.html',
+  styleUrls: ['./custom-tip.component.css']
 })
-export class TipCalulatorComponent {
-  constructor(private router: Router) { }
+export class CustomTipComponent {
+  constructor(private route: ActivatedRoute) { }
 
   billprev:TipCalc = {
     bill: 0,
     tipAmount: 0,
     tipTotal: 0
   };
-
-  calculateTip(tipPercentage: number) {
-    this.billprev.tipAmount = (tipPercentage * this.billprev.bill) / 100;
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.billprev.bill = +params.get('bill')!;
+    });
+  }
+  calculateTip() {
     const billAmount = parseFloat(this.billprev.bill.toString());
     const tip = parseFloat(this.billprev.tipAmount.toString());
     this.billprev.tipTotal = billAmount + tip ;
@@ -26,9 +29,5 @@ export class TipCalulatorComponent {
     this.billprev.tipTotal = parseFloat(this.billprev.tipTotal.toFixed(2));
   }
 
-  customTip(){
-    // Navigate to NewComponent with the billAmount as a route parameter
-    this.router.navigate(['/custom-tip', this.billprev.bill]);
-  }
-
+  
 }

@@ -28,16 +28,19 @@
  }
  /* basic menu styles */
  .nav-menu {
-   display: block;
-   background: #74adaa;
-   width:951px;
-   margin: 50px auto 150px;
+  display: block;
+  background: #74adaa;
+  width:944px;
+  margin: 50px auto 150px;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
  }
  .nav-menu > li {
-   display: inline;
-   float:left;     
-   border-right:1px solid #94c0be;
-   position: relative;
+  display: inline;
+  float:left;     
+  border-right:1px solid #94c0be;
+  position: relative; 
  }
  .nav-menu > li:last-child {
    border-right: none;

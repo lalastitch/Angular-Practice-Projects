@@ -14,3 +14,7 @@
     height: 100vh; /* Adjust the height as needed */
     font-family: 'sansationregular'; font-size: 40px;
 }
+
+.custom-button-spacing {
+    margin-right: 10px; /* Adjust the value as needed */
+}
