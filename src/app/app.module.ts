@@ -8,6 +8,7 @@ import { TipCalulatorComponent } from './tip-calulator/tip-calulator.component';
 import { GroceryListComponent } from './grocery-list/grocery-list.component';
 import { RPSComponent } from './rps/rps.component';
 import { WeatherComponent } from './weather/weather.component';
+import { CustomTipComponent } from './custom-tip/custom-tip.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { WeatherComponent } from './weather/weather.component';
     TipCalulatorComponent,
     GroceryListComponent,
     RPSComponent,
-    WeatherComponent
+    WeatherComponent,
+    CustomTipComponent
   ],
   imports: [
     BrowserModule,
