@@ -1,0 +1,36 @@
+.choices{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust the height as needed */
+    font-family: 'sansationregular';
+}
+
+h3{
+    font-family: 'sansationregular';
+}
+
+.theRock{
+    width:200px;
+    height:200px;
+    background-image: url("rpsImages/dwayne-the-rock-johnson-pink-suit-cardboard-cutout.png");
+    background-position: center; 
+    background-size: cover; 
+  
+}
+.paperSheet{
+    width:200px;
+    height:200px;
+    background-image: url("rpsImages/paper.png");
+    background-position: center;
+    background-size: cover; 
+  
+}
+.scissorDrawing{
+    width:200px;
+    height:200px;
+    background-image: url("rpsImages/scissor.png");
+    background-position: center; 
+    background-size: cover; 
+}

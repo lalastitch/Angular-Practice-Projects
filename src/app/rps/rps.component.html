@@ -1,1 +1,19 @@
-<p>rps works!</p>
+<div class="choices">
+    <h2 style="font-size: 48px; font-family: 'sansationregular';">Select Rock, Paper, or Scissor to Fight the Computer</h2>
+    <br>
+    <div class="imageChoices">
+        <button (click)="player('rock')" style="margin-right: 10px; border-color: #74adaa; border-style: solid;">
+            <div class="theRock">
+            </div>
+        </button>
+        <button (click)="player('paper')" style="margin-right: 10px; border-color: #74adaa; border-style: solid;">
+            <div class="paperSheet">
+            </div>
+        </button>
+        <button (click)="player('scissor')" style="border-color: #74adaa; border-style: solid;">
+            <div class="scissorDrawing">
+            </div>
+        </button>
+    </div>
+    <h2 style="font-family: 'sansationregular';">Reminder: The Rock will smack scissors, paper smothers the Rock, and scissors cuts through paper</h2>
+</div>
