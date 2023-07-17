@@ -1,4 +1,5 @@
 export interface DialogInfo {
     result:string,
-    url:string
+    url:string,
+    sent:string
 }
