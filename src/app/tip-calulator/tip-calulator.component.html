@@ -18,7 +18,7 @@
             </div>
         </div>
     </form>
-    <p class="mt-4" >Tip: ${{ billprev.tipAmount }}</p>
+    <p class="mt-4" >Tip: ${{ billprev.tipAmount  | number:'1.2-2' }}</p>
     <br>
-    <p>Total: ${{ billprev.tipTotal }}</p>
+    <p>Total: ${{ billprev.tipTotal  | number:'1.2-2' }}</p>
 </div>
