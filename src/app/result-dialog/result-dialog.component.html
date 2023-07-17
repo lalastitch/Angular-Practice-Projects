@@ -1,8 +1,5 @@
-<h1>{{data.result}}</h1>
-
-
-<img [src]="data.url">
-<h2 mat-dialog-title>{{ data.result }}</h2>
-<div mat-dialog-actions>
-  <button mat-button (click)="close()")>OK</button>
+<div class="mat-dialog-container">
+  <div style="background-image: url(data.url)"></div>
+  <h2 mat-dialog-title>{{ data.result }}</h2>
+  <button mat-button style="background-color:  #74adaa; color: #FFFFFF;" class="btn btn-lg flex-fill custom-button-spacing " (click)="close()">OK</button>
 </div>

@@ -10,7 +10,7 @@ import { DialogInfo } from '../data/dialog-info';
 export class ResultDialogComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogInfo,
   private dialogRef: MatDialogRef<ResultDialogComponent>) {}
-
+  
   close():void{
     this.dialogRef.close();
   }

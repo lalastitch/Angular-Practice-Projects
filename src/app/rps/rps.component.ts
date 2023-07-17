@@ -13,7 +13,7 @@ export class RPSComponent {
 
   info:DialogInfo = {
     result:"",
-    url:""
+    url:"",
   }
 
   player(choice:string){
@@ -55,15 +55,14 @@ export class RPSComponent {
       this.info.url = ".\resultImages\rockLoses.jpg";
 
     }  
-    
     this.openResultDialog(this.info);
 
   }
 
   openResultDialog(info:DialogInfo) :void {
     this.dialog.open(ResultDialogComponent, {
-      width: '800px',
-      data:{info}
+      width: '400px',
+      data:info
     });
   }
 }

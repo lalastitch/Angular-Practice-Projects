@@ -1,27 +1,20 @@
 <div class="choices">
-    <h2>Select Rock, Paper, or Scissor to Fight the Computer</h2>
-    <br>
-    <br>
+    <h2 style="font-size: 48px; font-family: 'sansationregular';">Select Rock, Paper, or Scissor to Fight the Computer</h2>
     <br>
     <div class="imageChoices">
-        <button id="rock" (click)="player('rock')">
+        <button (click)="player('rock')" style="margin-right: 10px; border-color: #74adaa; border-style: solid;">
             <div class="theRock">
-                <!-- <img class="theRockImage" style="display: block;" src="rpsImages/dwayne-the-rock-johnson-pink-suit-cardboard-cutout.png"> -->
             </div>
         </button>
-        <button id="paper" (click)="player('paper')">
+        <button (click)="player('paper')" style="margin-right: 10px; border-color: #74adaa; border-style: solid;">
             <div class="paperSheet">
-                <!-- <img class="paperSheetImage" style="display: block;" src="rpsImages/paper.png"> -->
             </div>
         </button>
-        <button id="scissor" (click)="player('scissor')">
+        <button (click)="player('scissor')" style="border-color: #74adaa; border-style: solid;">
             <div class="scissorDrawing">
-                <!-- <img class="scissorDrawingImage" style="display: block;" src="rpsImages/scissor.png"> -->
             </div>
         </button>
     </div>
-    <h6>Reminder: The Rock will smask scissors, paper smothers the Rock, and scissors cuts through paper</h6>
+    <h2 style="font-family: 'sansationregular';">Reminder: The Rock will smack scissors, paper smothers the Rock, and scissors cuts through paper</h2>
 
-    <div class="resultImage"></div>
-    <h1>{{info.result}}</h1>
 </div>
