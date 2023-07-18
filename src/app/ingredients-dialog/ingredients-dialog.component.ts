@@ -12,6 +12,11 @@ export class IngredientsDialogComponent {
   private dialogRef: MatDialogRef<IngredientsDialogComponent>) {}
   
   close():void{
-    this.dialogRef.close();
+    console.log(this.data.ingredients);
+    this.dialogRef.close(this.data.ingredients);
+  }
+
+  remove(ing:string):void{
+    this.data.ingredients = this.data.ingredients.filter(item => item != ing);
   }
 }

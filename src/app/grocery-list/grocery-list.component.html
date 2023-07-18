@@ -1,21 +1,26 @@
-<div>
-    <br>
-    <input class="form-control" style="font-family: 'sansationregular'; width: 350px;" placeholder="Enter ingredient" [(ngModel)]="ingredientInput" name="cityName" required>
-    
-        
-    <button style="font-family: 'sansationregular'; background-color:  #74adaa; color: #FFFFFF; border: none; padding: 5px 10px; cursor: pointer;" class="btn btn-lg  flex-fill custom-button-spacing" (click)="addList()">Add to List</button>
-</div>
-<div class="view-list">
-    <button (click)="openResultDialog(this.info)" style="text-align:center; font-family: 'sansationregular'; background-color:  #e5f4f9; color: black; border: none; padding-right: 200px; cursor: pointer;" class="btn btn-lg  flex-fill custom-button-spacing view-list-button" >View Grocery List
-    </button>
-</div>
-<div class="view-recipes">
-    
-    <button style="font-family: 'sansationregular'; background-color:  #dff2f8; color: black; border: none; padding-right: 200px; cursor: pointer;" class="btn btn-lg  flex-fill custom-button-spacing view-recipes-button" (click)="searchRecipes()">View Recipes</button>
-</div>
-
-<div *ngFor="let recipe of recipes">
-    <div style="background-image: url('{{recipe.image}}'); background-repeat: no-repeat;">
-        <button style="font-family: 'sansationregular'; background-color:  #74adaa; color: #FFFFFF; border: none; margin-top: 50px; cursor: pointer;" class="btn btn-lg  flex-fill custom-button-spacing">{{ recipe.title }}</button>
+<div class="container">
+    <div class="content">
+        <div style="position: fixed; left: 29%; top: 10%; display:flex;">
+            <br>
+            <input class="form-control" style="font-family: 'sansationregular'; width: 350px;margin-right: 10px;" placeholder="Enter ingredient" [(ngModel)]="ingredientInput" name="cityName" required>
+            <button style="font-family: 'sansationregular'; background-color:  #74adaa; color: #FFFFFF; border: none; padding: 5px 10px; cursor: pointer;" class="btn btn-lg  flex-fill custom-button-spacing" (click)="addList()">Add to List</button>
+        </div>
+        <div class="view-list">
+            <button (click)="openResultDialog(this.info)" style="text-align:center; font-family: 'sansationregular'; background-color:  #e5f4f9; color: black; border: none; padding-right: 200px; cursor: pointer;" class="btn btn-lg  flex-fill custom-button-spacing view-list-button" >View Grocery List
+            </button>
+        </div>
+      <div class="recipe-container">
+        <div class="view-recipes">
+            
+            <button style="font-family: 'sansationregular'; background-color:  #dff2f8; color: black; border: none; padding-right: 200px; cursor: pointer;" class="btn btn-lg  flex-fill custom-button-spacing view-recipes-button" (click)="searchRecipes()">View Recipes</button>
+        </div>
+      </div>
+      <div class="recipe-container">
+        <div *ngFor="let recipe of recipes" class="recipe-item">
+          <div class="recipe-image" [style.backgroundImage]="'url(' + recipe.image + ')'" [style.backgroundRepeat]="'no-repeat'">
+            <button class="recipe-button">{{ recipe.title }}</button>
+          </div>
+        </div>
+    </div>
     </div>
   </div>

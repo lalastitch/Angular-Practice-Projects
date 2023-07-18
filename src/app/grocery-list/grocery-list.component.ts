@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { SpoonacularService } from '../spoonacular.service';
 import { IngInfo } from '../data/ing-info';
 import { IngredientsDialogComponent } from '../ingredients-dialog/ingredients-dialog.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,10 +11,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./grocery-list.component.css']
 })
 export class GroceryListComponent {
+  dialogRef!: MatDialogRef<IngredientsDialogComponent>;
 
-info:IngInfo = {
-  ingredients: []
-}
+  info:IngInfo = {
+    ingredients: []
+  }
   ingredientInput: string = '';
   recipes!: any[];
 
@@ -31,13 +32,22 @@ info:IngInfo = {
     });
   }
   addList(){
-    this.info.ingredients.push(this.ingredientInput);
+    if(!this.info.ingredients.includes(this.ingredientInput)){
+      this.info.ingredients.push(this.ingredientInput);
+    }
   }
   openResultDialog(info:IngInfo) :void {
-    this.dialog.open(IngredientsDialogComponent, {
+    this.dialogRef = this.dialog.open(IngredientsDialogComponent, {
       width: '400px',
       data:info
     });
+    console.log(this.info.ingredients);
+
+    // this.dialogRef.afterClosed().subscribe((result: IngInfo ) => {
+    //   this.info.ingredients = result.ingredients;
+    //   console.log(result.ingredients);
+    // });
+    
   }
 
   

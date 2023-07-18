@@ -1,6 +1,15 @@
+.container {
+    height: 100%; /* Adjust 64px to the height of your toolbar */
+    overflow-y: auto;
+}
+/* Hide the default scrollbar */
+.container::-webkit-scrollbar {
+    display: none;
+}
+
 .view-list{
     position: fixed;
-    top: 20%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 24px;
@@ -17,7 +26,7 @@
 
 .view-recipes{
     position: fixed;
-    top: 45%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 24px;
@@ -31,4 +40,34 @@
     background-position: right;
     background-size: contain;
     background-repeat: no-repeat;
+}
+.recipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 250px;
+    padding-bottom: 100px;
+  }
+  
+.recipe-item {
+flex-basis: 300px;
+}
+
+.recipe-image {
+position: relative;
+background-size: cover;
+height: 200px;
+}
+
+.recipe-button {
+position: absolute;
+bottom: 10px;
+left: 10px;
+font-family: 'sansationregular';
+background-color: #74adaa;
+color: #ffffff;
+border: none;
+padding: 5px 10px;
+cursor: pointer;
 }
