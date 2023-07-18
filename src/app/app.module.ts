@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TipCalulatorComponent } from './tip-calulator/tip-calulator.component';
 import { GroceryListComponent } from './grocery-list/grocery-list.component';
 import { RPSComponent } from './rps/rps.component';
-import { WeatherComponent } from './weather/weather.component';
+import { WeatherDashboardComponent } from './weather/weather.component';
 import { CustomTipComponent } from './custom-tip/custom-tip.component';
+import { ResultDialogComponent } from './result-dialog/result-dialog.component';
+import { IngredientsDialogComponent } from './ingredients-dialog/ingredients-dialog.component';
+import { ViewRecipesComponent } from './view-recipes/view-recipes.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +22,19 @@ import { CustomTipComponent } from './custom-tip/custom-tip.component';
     TipCalulatorComponent,
     GroceryListComponent,
     RPSComponent,
-    WeatherComponent,
-    CustomTipComponent
+    WeatherDashboardComponent,
+    CustomTipComponent,
+    ResultDialogComponent,
+    IngredientsDialogComponent,
+    ViewRecipesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

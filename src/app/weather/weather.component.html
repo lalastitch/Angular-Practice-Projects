@@ -1,1 +1,19 @@
-<p>weather works!</p>
+<div class="dashboard">
+    <div class="form-group">
+        <form (ngSubmit)="searchWeather()">
+        <label for="cityName" style="font-family: 'sansationregular';">Weather Dashboard</label>
+        <br>
+        <br>
+        <input class="form-control" style="font-family: 'sansationregular'; width: 350px;"placeholder="Enter city name" [(ngModel)]="cityName" name="cityName" required>
+        <br>
+        <button style="background-color:  #74adaa; color: #FFFFFF; border: none; padding: 5px 10px; cursor: pointer;" class="btn btn-lg  flex-fill custom-button-spacing" type="submit">Search</button>
+        </form>
+    </div>
+    <div *ngIf="weatherData">
+        <br>
+        <p style="font-family: 'sansationregular';">Weather for {{ weatherData.name }}</p>
+        <p style="font-family: 'sansationregular';">Temperature: {{ (weatherData.main.temp  - 273.15) * 9/5 + 32  | number:'1.2-2'}} &deg;F</p>
+        <p style="font-family: 'sansationregular';">Humidity: {{ weatherData.main.humidity }}%</p>
+        <p style="font-family: 'sansationregular';">Description: {{ weatherData.weather[0].description }}</p>
+    </div>
+</div>

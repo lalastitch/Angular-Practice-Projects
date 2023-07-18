@@ -1,0 +1,6 @@
+<h1>HELLO</h1>
+{{this.recipes}}
+<div *ngFor="let recipe of recipes">
+    <h3>{{ recipe.title }}</h3>
+    <div [ngStyle]="{ 'background-image': 'url(' + recipe.image + ')', 'background-size': 'cover' }"></div>
+</div>
