@@ -8,15 +8,11 @@ import { IngInfo } from '../data/ing-info';
   styleUrls: ['./ingredients-dialog.component.css']
 })
 export class IngredientsDialogComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: IngInfo,
+  constructor(@Inject(MAT_DIALOG_DATA) public data: string,
   private dialogRef: MatDialogRef<IngredientsDialogComponent>) {}
   
   close():void{
-    console.log(this.data.ingredients);
-    this.dialogRef.close(this.data.ingredients);
+    this.dialogRef.close();
   }
 
-  remove(ing:string):void{
-    this.data.ingredients = this.data.ingredients.filter(item => item != ing);
-  }
 }

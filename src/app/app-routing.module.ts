@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'weather', component: WeatherDashboardComponent },
   { path: 'tip-calculator', component: TipCalulatorComponent},
   { path: 'custom-tip/:bill', component: CustomTipComponent  },
-  { path: 'view-recipes/:title', component: ViewRecipesComponent  }
+  { path: 'view-recipes/:recipeID', component: ViewRecipesComponent  }
 ];
 
 @NgModule({

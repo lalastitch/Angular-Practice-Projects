@@ -10,13 +10,11 @@ export class SpoonacularService {
 
   constructor(private http: HttpClient) {}
 
-  searchRecipesByIngredient(ingredients: string[]): Observable<any> {
-    const url = 'https://api.spoonacular.com/recipes/findByIngredients';
+  searchRecipesByIngredient(): Observable<any> {
+    const url = 'https://api.spoonacular.com/recipes/random?number=28';
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     const params = new HttpParams()
       .set('apiKey', this.apiKey)
-      .set('ingredients', ingredients.join(','))
-      .set('number', '10'); // Number of recipes to retrieve
 
     return this.http.get(url, { headers, params });
   }

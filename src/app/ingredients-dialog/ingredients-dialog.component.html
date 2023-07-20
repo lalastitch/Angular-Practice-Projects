@@ -1,9 +1,4 @@
 <div class="mat-dialog-container">
-  <div class="ing-listing" >
-    <div *ngFor="let ing of data.ingredients" style="display: flex;">
-      <h2 mat-dialog-title>{{ ing }}</h2>
-      <button mat-button style="background-color:  #74adaa; color: #FFFFFF; align-self: flex-start;margin-top: 10px;" class="btn custom-button-spacing" (click)="remove(ing)">X</button>
-    </div>
-  </div>
-    <button mat-button style="background-color:  #74adaa; color: #FFFFFF;" class="btn btn-lg flex-fill custom-button-spacing " (click)="close()">OK</button>
-  </div>
+  <h2 mat-dialog-title [innerHTML]="data"></h2>
+  <button mat-button style="background-color:  #74adaa; color: #FFFFFF;" class="btn btn-lg flex-fill custom-button-spacing " (click)="close()">OK</button>
+</div>

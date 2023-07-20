@@ -1,5 +1,6 @@
 .mat-dialog-container {
     background-color: #51938f; /* Change the background color */
     font-size: 16px; /* Change the font size */
-    text-align: center;
+    text-align: left;
+    font-family: 'sansationregular';
 }

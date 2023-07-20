@@ -7,17 +7,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./view-recipes.component.css']
 })
 export class ViewRecipesComponent implements OnInit {
-  recipes: any[] = [];
-
   constructor(private route: ActivatedRoute) {}
+  recipeID:number = 0;
+
 
   ngOnInit() {
-    this.route.queryParams.subscribe((params: { [x: string]: any; }) => {
-      const recipesString = params['recipes'];
-      if (recipesString) {
-        this.recipes = JSON.parse(recipesString);
-        console.log("HERE");
-      }
+    this.route.paramMap.subscribe(params => {
+      this.recipeID = +params.get('recipeID')!;
     });
   }
 }
