@@ -56,7 +56,9 @@
     display: flex;
 }
 
-
+.filter-section{
+display: flex;
+}
 .grocery-list-section {
     border: 2px solid #51938f;
     padding: 5px;
@@ -89,4 +91,9 @@
 
 .ingredients-section-list{
     display: flex;
+}
+
+.no-recipe{
+    font-family: 'sansationregular';
+    font-size: 30px;
 }

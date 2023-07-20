@@ -16,6 +16,7 @@ export class GroceryListComponent {
 
   ingList: IngInfo[] = [];
   recipes!: any[];
+  filter:string = "";
 
   constructor(private spoonacularService: SpoonacularService,private dialog: MatDialog, private router: Router) {}
 
@@ -23,7 +24,15 @@ export class GroceryListComponent {
     this.searchRecipes();
   }
 
+  filteredRecipes(){
+    this.spoonacularService.searchRecipesByFilter(this.filter).subscribe((data: any) => {
+      this.recipes = data.recipes;
+      console.log(this.recipes);
+    });
+  }
+
   searchRecipes() {
+    this.filter = "";
     this.spoonacularService.searchRecipesByIngredient().subscribe((data: any) => {
       this.recipes = data.recipes;
       console.log(this.recipes);

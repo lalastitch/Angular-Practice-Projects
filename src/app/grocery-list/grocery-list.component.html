@@ -4,6 +4,15 @@
             <h2 class="recipes-header">Recipes</h2>                
             <button class="refresh-button" style=" font-family: 'sansationregular'; background-color:  #74adaa; color: #FFFFFF; border: none; cursor: pointer; font-size: 18px; width:200px; height:50px; margin-left: 80px;" class="btn custom-button-spacing" (click)="searchRecipes()">Different Recipes</button>    
         </div>
+        <div class="filter-section">
+            <input class="form-control" style="font-family: 'sansationregular'; width: 400px; height: 30px; font-size: 15px; margin-right: 5px; margin-bottom: 5px;" placeholder="Enter filter(s)" [(ngModel)]="filter" name="filter" required>
+            <button class="refresh-button" style=" font-family: 'sansationregular'; background-color:  #74adaa; color: #FFFFFF; height: 30px; border: none; cursor: pointer; font-size: 18px;display: flex; align-items: center; justify-content: center;" class="btn custom-button-spacing" (click)="filteredRecipes()">Filter</button>   
+            <button class="refresh-button" style=" font-family: 'sansationregular'; background-color:  #74adaa; color: #FFFFFF; height: 30px; border: none; cursor: pointer; font-size: 18px;display: flex; align-items: center; justify-content: center; margin-left: 5px;" class="btn custom-button-spacing" (click)="searchRecipes()">Reset Filter(s)</button>    
+        </div>
+        <div *ngIf="recipes.length === 0">
+            <br>
+            <p class="no-recipe">There are no recipes that match this filter</p>
+        </div>
 
         <div class="recipe-images">
             <div *ngFor="let recipe of recipes" class="recipe-item">
@@ -27,14 +36,14 @@
             <div *ngFor="let obj of ingList" class="grocery-item">
                 <div class="recipe-name">
                     <h6 style="font-family: 'sansationregular'; font-size: 30px;">{{obj.title}}</h6>
-                    <button class="remove-button" style="font-family: 'sansationregular'; background-color:  #74adaa; color: #FFFFFF; border: none; cursor: pointer; font-size: 15px;" class="btn custom-button-spacing" (click)="removeRecipe(obj.title)">X</button>
+                    <button class="remove-button" style="font-family: 'sansationregular'; background-color:  #74adaa; color: #FFFFFF; border: none; cursor: pointer; font-size: 15px; margin-left: 10px;" class="btn custom-button-spacing" (click)="removeRecipe(obj.title)">X</button>
                 </div>
                 <div class="ingredients-section-list">
                     <ul>
-                        <li style="font-family: 'sansationregular'; font-size: 18px;" *ngFor="let ing of obj.ingredients">{{ ing.name }}
-                            <button class="remove-button" style="font-family: 'sansationregular'; background-color:  #74adaa; color: #FFFFFF; border: none; cursor: pointer; font-size: 15px;" class="btn custom-button-spacing" (click)="removeIng(ing.name, obj.title)">X</button>
+                        <li style="font-family: 'sansationregular'; font-size: 18px; display: flex; justify-content: space-between; align-items: center;" *ngFor="let ing of obj.ingredients">{{ ing.name }} ({{ing.measures.us.amount | number:'1.2-2'}} {{ing.measures.us.unitShort}})
+                            <button class="remove-button" style="font-family: 'sansationregular'; background-color:  #74adaa; color: #FFFFFF; border: none; cursor: pointer; font-size: 15px; margin-left: 300px;" class="btn custom-button-spacing" (click)="removeIng(ing.name, obj.title)">X</button>
                         </li>
-                     </ul>
+                    </ul>
                 </div>
             </div>
         </div>

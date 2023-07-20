@@ -18,4 +18,15 @@ export class SpoonacularService {
 
     return this.http.get(url, { headers, params });
   }
+
+  searchRecipesByFilter(tags:string): Observable<any> {
+    const url = 'https://api.spoonacular.com/recipes/random?number=28';
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const params = new HttpParams()
+      .set('apiKey', this.apiKey)
+      .set('tags', tags)
+
+    return this.http.get(url, { headers, params });
+  }
+
 }
